@@ -30,6 +30,9 @@ function convertCurrency() {
     var currency = currencyElement.value;
     var amount = parseFloat(amountElement.value);
     var date = dateElement.value;
+    if (isNaN(amount) || amountElement.value.trim() === '') {
+        amount = 0;
+    }
     if (!date) {
         date = today;
     }

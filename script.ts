@@ -33,8 +33,12 @@ let previousDate: string = today;
 
 function convertCurrency(): void {
   const currency: string = currencyElement.value;
-  const amount: number = parseFloat(amountElement.value);
+  let amount: number = parseFloat(amountElement.value);
   let date: string = dateElement.value;
+
+  if (isNaN(amount) || amountElement.value.trim() === '') {
+    amount = 0;
+  }
 
   if (!date) {
     date = today;
